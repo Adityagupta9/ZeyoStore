@@ -1,0 +1,75 @@
+/* Ensure the page takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Main wrapper */
+#root, .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+/* Footer Styles */
+#footer {
+    width: 100%;
+    background-color: #111827; /* deep navy/blackish */
+    color: #d1d5db; /* light gray */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #374151; /* subtle top border */
+    font-size: 14px;
+}
+
+#footer p {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.about {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Responsive for mobile */
+@media only screen and (max-width: 600px) {
+    #footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .about {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .footer-link {
+        margin: 0;
+    }
+}

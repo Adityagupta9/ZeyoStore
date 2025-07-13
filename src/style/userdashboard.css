@@ -1,0 +1,106 @@
+.user-dashboard-container {
+    display: flex;
+    position: relative;
+    height: calc(100vh - 70px); /* Adjust this based on your header height */
+    top: 70px; /* Adjust this based on your header height */
+  }
+  
+  .pgbut {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: fixed; /* Fix position to keep it above other elements */
+    z-index: 1000;
+  }
+  
+  .menu-toggle-button-close, .menu-toggle-button-open {
+    top: 80px; /* Adjust this to ensure the button is below the header */
+    left: 20px;
+    background-color: #0a192f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+  }
+  
+  .menu-icon {
+    position: relative;
+    top: 2px;
+  }
+  
+  .user-menu {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: fixed;
+    top: 10%;
+    left: -260px; /* Initially hide the menu off the screen */
+    width: 230px; /* Increase the width of the menu */
+    height: 100%;
+    background-color: rgba(244, 233, 255, 0.407); /* Blur effect */
+    padding: 20px;
+    transition: left 0.3s ease;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.292);
+    backdrop-filter: blur(10px); /* Apply blur */
+    z-index: 999; /* Ensure it is above other elements but below the button */
+  }
+  
+  .user-menu.open {
+    left: 0; /* Slide the menu in when open */
+  }
+  
+.user-content {
+  flex: 1;
+  display:flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  transition: margin-left 0.3s ease;
+}
+
+/* Card styling */
+.user-card {
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 30px 25px;
+  width: 700px;
+  text-align: left;
+  transition: all 0.3s ease;
+  height: 300px;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Details inside card */
+.user-details {
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  color: #2c3e50;
+}
+
+.user-details span {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+  .user-details {
+    font-size: 12px;
+  }
+  .user-card {
+    left: 40px;
+    max-width: 400px;
+  }
+
+  .menu-toggle-button-close,
+  .menu-toggle-button-open {
+    top: 100px;
+  }
+}
