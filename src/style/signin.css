@@ -133,7 +133,7 @@ input[type="date"] {
   
 @media only screen and (max-width: 600px) {
     .signin-form{
-        width: 90%;
+        width: 375px;
     }
     
     .signin-form input{
