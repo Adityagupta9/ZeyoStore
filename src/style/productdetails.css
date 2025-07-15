@@ -98,15 +98,40 @@
   .detail-quantity {
     color: #dc3545;
   }
-  .similar-product-page{
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-  }
-  .similar-product{
-    text-align:left;
-    justify-content: center;
-    display: flex;
-  }
+.similar-product-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 10px;
+}
+
+.similar-product {
+  display: flex;
+  flex-wrap: wrap; /* ✅ Allow cards to wrap to next line */
+  justify-content: center;
+  gap: 20px; /* ✅ Adds spacing between cards */
+  margin-top: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .product-pic {
+      width: 60%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .product-info{
+      margin-left: 10px;
+    }
+    .purchase-button button{
+      font-size: 10px;
+      padding: 10px;
+    }
+    .similar-product-page{
+      background: linear-gradient(to bottom, #ffffff, #7a83df);
+      color: #f8f8f8;
+      padding: 50px 10px;
+    }
+    .similar-product{
+      gap: 10px;
+    }
+}

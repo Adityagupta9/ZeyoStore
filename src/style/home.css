@@ -7,8 +7,9 @@
 }
 
 .search-prod {
+  position: relative;
+  top: 10px;
   margin-top: 45px;
-  z-index: 7000;
   width: 100%; /* Ensure it takes full width */
   display: flex;
   justify-content: center; /* Center the search box */
