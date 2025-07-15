@@ -95,7 +95,7 @@
 @media only screen and (max-width: 768px) {
   .admin-dashboard-container {
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 0px;
   }
 
   .admin-content {
