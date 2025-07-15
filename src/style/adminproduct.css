@@ -3,21 +3,28 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 2
+  0px;
   margin-top: 20px;
   width: 100%;
   flex-grow: 1;
 }
 
 .product-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: linear-gradient(to bottom, #eaf1fe, #ffffff); /* subtle yellow to light gray */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   overflow: hidden;
   width: 240px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 400px;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 .prod-bestSale {
   display: inline-block;
@@ -51,9 +58,6 @@
 }
 
 
-.product-card:hover {
-  transform: translateY(-10px);
-}
 
 .img-box {
   display: flex;
@@ -67,6 +71,7 @@
   max-width: 100%;
   max-height: 170px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .product-details {
@@ -81,7 +86,9 @@ a {
 .product-details p {
   text-align: left;
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
 }
 
 .prod-name {
@@ -147,12 +154,12 @@ p.prod-shipping{
 }
   @media only screen and (max-width: 600px) {
     .product-cards-container{
-      gap: 10px;
+      gap: 20px;
     }
     .product-card {
-      width: 185px;
-      margin: 10px 0px;
-      max-height: 250px;
+      width: 175px;
+      margin: 10px 10px;
+      min-height: 200px;
     }
     
     .product-details p{
