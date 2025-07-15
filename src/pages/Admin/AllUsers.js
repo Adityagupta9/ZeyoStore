@@ -47,6 +47,7 @@ const AllUsers = () => {
 
         <div className="user-list-section">
             <h2 className="user-table-title">All Registered Users</h2>
+            <div className="table-wrapper">
             <table className="user-data-table">
                 <thead>
                 <tr>
@@ -56,6 +57,7 @@ const AllUsers = () => {
                     <th>Role</th>
                 </tr>
                 </thead>
+                
                 <tbody>
                 {users?.map((user) => (
                     <tr key={user._id}>
@@ -67,6 +69,7 @@ const AllUsers = () => {
                 ))}
                 </tbody>
             </table>
+            </div>
             </div>
 
       </div>
