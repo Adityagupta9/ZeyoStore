@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../../style/header.css';
 import { CgShoppingBag } from "react-icons/cg";
@@ -15,6 +15,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [navVisible, setNavVisible] = useState(true);
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useCart();
   const categories = useCategory();
 
@@ -39,30 +40,35 @@ const Header = () => {
   };
 
   const toggleCategoryDropdown = () => {
-    setCategoryDropdownOpen(!categoryDropdownOpen);
-  };
+  setCategoryDropdownOpen(true);
+  setTimeout(() => {
+    setCategoryDropdownOpen(false);
+  }, 3000); // closes after 3 seconds
+};
+
 
   const getFirstName = (fullName) => {
     return fullName.split(' ')[0];
   };
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
-      setNavVisible(false);
-    } else {
-      setNavVisible(true);
-    }
-    setLastScrollY(currentScrollY);
-  };
+  const handleScroll = useCallback(() => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY) {
+    setNavVisible(false);
+  } else {
+    setNavVisible(true);
+  }
+  setLastScrollY(currentScrollY);
+}, [lastScrollY]);
+
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [handleScroll]);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
 
   return (
     <>

@@ -11,7 +11,7 @@ const Search = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const { data } = await axios.get(`https://valiant-sore-tennis.glitch.me/api/v1/product/search/${value.keyword}`);
+        const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/search/${value.keyword}`);
         setValue({ ...value, results: data });
         navigate("/search");
     } catch (error) {
